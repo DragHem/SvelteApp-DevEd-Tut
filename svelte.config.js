@@ -1,10 +1,11 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-netlify';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
+export default {
 	kit: {
-		adapter: adapter({ split: false })
+		adapter: adapter({
+			// if true, will split your app into multiple functions
+			// instead of creating a single one for the entire app
+			split: false
+		})
 	}
 };
-
-export default config;
